@@ -1,0 +1,104 @@
+body {
+  background-color: #000;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+}
+
+p,
+a {
+  color: #fff;
+  font-size: 3vw;
+  font-family: 'Rubik', sans-serif;
+  margin: 0rem;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+}
+
+#text:has(.fancy:hover) .word:not(.fancy:hover) {
+  opacity: 0.4;
+}
+
+p,
+.fancy > .letter {
+  display: inline-block;
+  transition: transform 350ms ease;
+  animation: background-pan 10s linear infinite;
+  background: linear-gradient(
+    to right,
+    #ecf2ff,
+    #e3dffd,
+    #e5d1fa,
+    #fff4d2,
+    #ecf2ff
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+  background-size: 200%;
+}
+
+.fancy:hover > .letter {
+  transition-duration: 800ms;
+}
+
+.fancy:hover > .letter:nth-child(1) {
+  transform: translate(-80%, 60%) rotate(8deg);
+}
+
+.fancy:hover > .letter:nth-child(2) {
+  transform: translate(0%, 8%) rotate(-6deg);
+}
+
+.fancy:hover > .letter:nth-child(3) {
+  transform: translate(-10%, 60%) rotate(-6deg);
+}
+
+.fancy:hover > .letter:nth-child(4) {
+  transform: translate(0%, 8%) rotate(-8deg);
+}
+.fancy:hover > .letter:nth-child(5) {
+  transform: translate(0%, 60%) rotate(-3deg);
+}
+.fancy:hover > .letter:nth-child(6) {
+  transform: translate(0%, 20%) rotate(-3deg);
+}
+.fancy:hover > .letter:nth-child(7) {
+  transform: translate(0%, 80%) rotate(-5deg);
+}
+.fancy:hover > .letter:nth-child(8) {
+  transform: translate(20%, 35%) rotate(-10deg);
+}
+.fancy:hover > .letter:nth-child(9) {
+  transform: translate(0%, -10%) rotate(15deg);
+}
+.fancy:hover > .letter:nth-child(10) {
+  transform: translate(0%, 45%) rotate(-6deg);
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: -200% center;
+  }
+}
+
+@media (min-width: 768px) {
+  p,
+  a {
+    font-size: 5vw;
+  }
+}
